@@ -1,0 +1,71 @@
+@charset "UTF-8";
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400;1,600&display=swap');
+
+  *{
+    font-family: 'Poppins', sans-serif;
+    margin:  0 ;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: url("/img/Hinh-anh-thanh-pho-Da-Nang-dep-an-tuong-nhat.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    list-style: none;
+    margin-right: auto;
+    display: inline-block; 
+  }
+  .logo img {
+    width: 100%; 
+    height: auto;
+  }
+  .Sign-in {
+   margin-right: auto ;
+  }
+  
+  header .navigation {
+    flex: 1;
+  }
+  
+  header .navigation a {
+    color: #034BB7;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 2px 15px;
+    text-align: center;
+    transition: color 0.3s; 
+  }
+  
+  header .navigation a:hover {
+    color: #01245A;
+    
+  }
+  
+  
