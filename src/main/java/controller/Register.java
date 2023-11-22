@@ -70,7 +70,7 @@ request.setAttribute("baoLoi", baoLoi);
 			String maKhachHang = System.currentTimeMillis() + rd.nextInt(1000) +"";
 			KhachHang kh = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh,diaChi,Date.valueOf(ngaySinh), dienThoai, email, dongYNhanEmail!= null) ;
 			khachHangDAO.insert(kh);
-			url = "/index.jsp";
+			url = "/thanhcong.jsp";
 		}
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
 		rd.forward(request, response);

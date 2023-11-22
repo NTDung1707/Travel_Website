@@ -21,11 +21,11 @@
                 <h2><a href="#" class="logo"><img src="img/logo-du-lich-da-nang-tourism-vn-1-1187x900_preview_rev_1.png" alt="Mo ta anh"></a></h2>
                 <div class="navigation">
                     <a href="home.html">Home</a>
-                    <a href="destinations.html">Destinations</a>
+                <!--    <a href="destinations.html">Destinations</a>
                     <a href="foods.html">Foods</a>
                     <a href="Hotel.html">Hotel</a>
-                    <a href="contact.html" >Contact</a>
-                    <a href="about.html" >About</a>   
+                    <a href="contact.html" >Contact</a> 
+                    <a href="about.html" >About</a>    --> 
                   
                   
 					<%
