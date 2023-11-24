@@ -13,6 +13,8 @@ import model.KhachHang;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.Random;
+import util.Email;
+
 /**
  * Servlet implementation class Register
  */
@@ -57,6 +59,9 @@ public class Register extends HttpServlet {
 		if(khachHangDAO.kiemtraTenDangNhap(tenDangNhap)) {
 			baoLoi +="Tên đang nhập đã tồn tại" ; 
 		}
+		if(khachHangDAO.kiemtraEmail(email)) {
+			baoLoi +=" Email đã được đăng kí " ; 
+		}
 		if(!matKhau.equals(matKhauNhapLai)) {
 			baoLoi +="Mật Khẩu không khớp" ; 
 		}
@@ -71,7 +76,26 @@ request.setAttribute("baoLoi", baoLoi);
 			KhachHang kh = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh,diaChi,Date.valueOf(ngaySinh), dienThoai, email, dongYNhanEmail!= null) ;
 			khachHangDAO.insert(kh);
 			url = "/thanhcong.jsp";
+			
+			// gửi email
+			String subject = "Đăng ký tài khoản thành công!";
+            String content = "Chào mừng " + hoVaTen + ",<br><br>"
+                    + "Chúc mừng bạn đã đăng ký thành công tài khoản.<br><br>"
+            		+ "Tài khoản :  "+tenDangNhap +"<br>"+" Mật khẩu : "+matKhau+"<br>"
+                    + " Cảm ơn bạn đã tham gia.<br>"
+                    + "Trân trọng,<br>";
+            
+            boolean emailSent = Email.sendEmail(email, subject, content);
+
+            if (emailSent) {
+                System.out.println("Email đã được gửi thành công!");
+                url = "/thanhcong.jsp";
+            } else {
+                System.out.println("Gửi email không thành công. Kiểm tra lại cấu hình email.");
+                url = "/register.jsp";
+            }
 		}
+		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
 		rd.forward(request, response);
 	
@@ -85,4 +109,5 @@ request.setAttribute("baoLoi", baoLoi);
 		doGet(request, response);
 	}
 
+	
 }
