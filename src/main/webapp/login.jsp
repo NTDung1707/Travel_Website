@@ -24,6 +24,46 @@
 .red {
 	color: red;
 }
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.form-signin {
+    max-width: 400px;
+    padding: 15px;
+    margin: auto;
+    background-color: rgba(62, 154, 188, 0.3); 
+}
+
+.form-floating {
+    margin-bottom: 15px;
+}
+
+.form-floating input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.checkbox {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+a {
+	text-decoration: none;
+	color: blue;
+}
+
 </style>
 <!-- Custom styles for this template -->
 <%
@@ -34,7 +74,7 @@ String url = request.getScheme() + "://" + request.getServerName() + ":" + reque
 
 
 </head>
-<body>
+<body style="background-image: url('img/Hinh-anh-thanh-pho-Da-Nang-dep-an-tuong-nhat.jpg'); background-size: cover; background-position: center;">
 	<main class="form-signin w-100 m-auto">
 		<form class="text-center" action="dang-nhap" method="POST">
 			
@@ -61,7 +101,8 @@ String url = request.getScheme() + "://" + request.getServerName() + ":" + reque
 				</label>
 			</div>
 			<button class="w-100 btn btn-lg btn-primary" type="submit">Đăng nhập</button>
-			<a href="register.jsp">Đăng ký tài khoản mới</a>
+			Bạn chưa có tài khoản?
+			<a href="register.jsp">Đăng ký ngay</a>
 			<p class="mt-5 mb-3 text-muted">&copy; 2017–2025</p>
 		</form>
 	</main>

@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Đăng ký</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -23,90 +24,142 @@
 .red {
 	color: red;
 }
+
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f8f9fa;
+}
+
+.container {
+	margin-top: 50px;
+}
+
+.text-center {
+	margin-bottom: 30px;
+}
+
+.red {
+	color: red;
+}
+
+.form {
+	background-color: rgba(40, 155, 221, 0.2); 
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	border-radius: 8px;
+	margin-bottom: 100px;
+}
+
+.form h1 {
+	color: #007bff;
+}
+
+.form-label {
+	font-weight: bold;
+	color: #495057;
+}
+
+.btn-primary {
+	background-color: #007bff;
+	border-color: #007bff;
+}
+
+.btn-primary:hover {
+	background-color: #0056b3;
+	border-color: #0056b3;
+}
 </style>
 </head>
-<body>
+<body style="background-image: url('img/Hinh-anh-thanh-pho-Da-Nang-dep-an-tuong-nhat.jpg'); background-size: cover; background-position: center;">
 	<%
-		String baoLoi = request.getAttribute("baoLoi")+"";
-		baoLoi = (baoLoi.equals("null"))?"":baoLoi;
-	
-		
-		String tenDangNhap= request.getAttribute("tenDangNhap")+"";	
-		tenDangNhap = (tenDangNhap.equals("null"))?"":tenDangNhap;
-		
-		String hoVaTen= request.getAttribute("hoVaTen")+"";
-		hoVaTen = (hoVaTen.equals("null"))?"":hoVaTen;
-		
-		String gioiTinh= request.getAttribute("gioiTinh")+"";
-		gioiTinh = (gioiTinh.equals("null"))?"":gioiTinh;
-		
-		String ngaySinh= request.getAttribute("ngaySinh")+"";
-		ngaySinh = (ngaySinh.equals("null"))?"":ngaySinh;
-		
-		String diaChiKhachHang= request.getAttribute("diaChiKhachHang")+"";
-		diaChiKhachHang = (diaChiKhachHang.equals("null"))?"":diaChiKhachHang;
-		
-		String diaChiMuaHang= request.getAttribute("diaChiMuaHang")+"";
-		diaChiMuaHang = (diaChiMuaHang.equals("null"))?"":diaChiMuaHang;
-		
-		String diaChiNhanHang= request.getAttribute("diaChiNhanHang")+"";
-		diaChiNhanHang = (diaChiNhanHang.equals("null"))?"":diaChiNhanHang;
-		
-		String dienThoai= request.getAttribute("dienThoai")+"";
-		dienThoai = (dienThoai.equals("null"))?"":dienThoai;
-		
-		String email= request.getAttribute("email")+"";
-		email = (email.equals("null"))?"":email;
-		
-		String dongYNhanMail= request.getAttribute("dongYNhanMail")+"";
-		dongYNhanMail = (dongYNhanMail.equals("null"))?"":dongYNhanMail;
+	String baoLoi = request.getAttribute("baoLoi") + "";
+	baoLoi = (baoLoi.equals("null")) ? "" : baoLoi;
+
+	String tenDangNhap = request.getAttribute("tenDangNhap") + "";
+	tenDangNhap = (tenDangNhap.equals("null")) ? "" : tenDangNhap;
+
+	String hoVaTen = request.getAttribute("hoVaTen") + "";
+	hoVaTen = (hoVaTen.equals("null")) ? "" : hoVaTen;
+
+	String gioiTinh = request.getAttribute("gioiTinh") + "";
+	gioiTinh = (gioiTinh.equals("null")) ? "" : gioiTinh;
+
+	String ngaySinh = request.getAttribute("ngaySinh") + "";
+	ngaySinh = (ngaySinh.equals("null")) ? "" : ngaySinh;
+
+	String diaChiKhachHang = request.getAttribute("diaChiKhachHang") + "";
+	diaChiKhachHang = (diaChiKhachHang.equals("null")) ? "" : diaChiKhachHang;
+
+	String diaChiMuaHang = request.getAttribute("diaChiMuaHang") + "";
+	diaChiMuaHang = (diaChiMuaHang.equals("null")) ? "" : diaChiMuaHang;
+
+	String diaChiNhanHang = request.getAttribute("diaChiNhanHang") + "";
+	diaChiNhanHang = (diaChiNhanHang.equals("null")) ? "" : diaChiNhanHang;
+
+	String dienThoai = request.getAttribute("dienThoai") + "";
+	dienThoai = (dienThoai.equals("null")) ? "" : dienThoai;
+
+	String email = request.getAttribute("email") + "";
+	email = (email.equals("null")) ? "" : email;
+
+	String dongYNhanMail = request.getAttribute("dongYNhanMail") + "";
+	dongYNhanMail = (dongYNhanMail.equals("null")) ? "" : dongYNhanMail;
 	%>
 	<div class="container">
 		<div class="text-center">
 			<h1>ĐĂNG KÝ TÀI KHOẢN</h1>
 		</div>
-		
+
 		<div class="red" id="baoLoi">
-			<%=baoLoi %>
+			<%=baoLoi%>
 		</div>
 		<form class="form" action="do-Register" method="post">
 			<div class="row">
 				<div class="col-sm-6">
-					<h3>Tài khoản</h3>                
+					<h3>Tài khoản</h3>
 					<div class="mb-3">
 						<label for="tenDangNhap" class="form-label">Tên đăng nhập<span
 							class="red">*</span></label> <input type="text" class="form-control"
-							id="tenDangNhap" name="tenDangNhap" required="required" value="<%=tenDangNhap%>">
+							id="tenDangNhap" name="tenDangNhap" required="required"
+							value="<%=tenDangNhap%>">
 					</div>
 					<div class="mb-3">
 						<label for="matKhau" class="form-label">Mật khẩu<span
 							class="red">*</span></label> <input type="password" class="form-control"
-							id="matKhau" name="matKhau" required="required" onkeyup="kiemTraMatKhau()">
+							id="matKhau" name="matKhau" required="required"
+							onkeyup="kiemTraMatKhau()">
 					</div>
 					<div class="mb-3">
-						<label for="matKhauNhapLai" class="form-label" >Nhập lại
-							mật khẩu<span class="red">*</span> <span id="msg" class="red" ></span>
+						<label for="matKhauNhapLai" class="form-label">Nhập lại
+							mật khẩu<span class="red">*</span> <span id="msg" class="red"></span>
 						</label> <input type="password" class="form-control" id="matKhauNhapLai"
-							name="matKhauNhapLai" required="required" onkeyup="kiemTraMatKhau()">
+							name="matKhauNhapLai" required="required"
+							onkeyup="kiemTraMatKhau()">
 					</div>
 					<hr />
 					<h3>Thông tin khách hàng</h3>
 					<div class="mb-3">
 						<label for="hoVaTen" class="form-label">Họ và tên</label> <input
-							type="text" class="form-control" id="hoVaTen" name="hoVaTen" value="<%=hoVaTen%>">
+							type="text" class="form-control" id="hoVaTen" name="hoVaTen"
+							value="<%=hoVaTen%>">
 					</div>
 					<div class="mb-3">
 						<label for="gioiTinh" class="form-label">Giới tính</label> <select
 							class="form-control" id="gioiTinh" name="gioiTinh">
 							<option></option>
-							<option value="Nam" <%=(gioiTinh.equals("Nam"))?"selected='selected'":"" %> >Nam</option>
-							<option value="Nữ" <%=(gioiTinh.equals("Nữ"))?"selected='selected'":"" %> >Nữ</option>
-							<option value="Khác" <%=(gioiTinh.equals("Khác"))?"selected='selected'":"" %> >Khác</option>
+							<option value="Nam"
+								<%=(gioiTinh.equals("Nam")) ? "selected='selected'" : ""%>>Nam</option>
+							<option value="Nữ"
+								<%=(gioiTinh.equals("Nữ")) ? "selected='selected'" : ""%>>Nữ</option>
+							<option value="Khác"
+								<%=(gioiTinh.equals("Khác")) ? "selected='selected'" : ""%>>Khác</option>
 						</select>
 					</div>
 					<div class="mb-3">
 						<label for="ngaySinh" class="form-label">Ngày sinh</label> <input
-							type="date" class="form-control" id="ngaySinh" name="ngaySinh" value="<%=ngaySinh%>">
+							type="date" class="form-control" id="ngaySinh" name="ngaySinh"
+							value="<%=ngaySinh%>">
 					</div>
 				</div>
 				<div class="col-sm-6">
@@ -114,30 +167,35 @@
 					<div class="mb-3">
 						<label for="diaChiKhachHang" class="form-label">Địa chỉ
 							khách hàng</label> <input type="text" class="form-control"
-							id="diaChiKhachHang" name="diaChiKhachHang" value="<%=diaChiKhachHang%>">
+							id="diaChiKhachHang" name="diaChiKhachHang"
+							value="<%=diaChiKhachHang%>">
 					</div>
 					<div class="mb-3">
 						<label for="dienThoai" class="form-label">Điện thoại</label> <input
-							type="tel" class="form-control" id="dienThoai" name="dienThoai" value="<%=dienThoai%>">
+							type="tel" class="form-control" id="dienThoai" name="dienThoai"
+							value="<%=dienThoai%>">
 					</div>
 					<div class="mb-3">
 						<label for="email" class="form-label">Email</label> <input
-							type="email" class="form-control" id="email" name="email"  value="<%=email%>">
+							type="email" class="form-control" id="email" name="email"
+							value="<%=email%>">
 					</div>
 					<hr />
 					<div class="mb-3">
 						<label for="dongYDieuKhoan" class="form-label">Đồng ý với
 							<a>điều khoản của công ty </a><span id="red">*</span>
 						</label> <input type="checkbox" class="form-check-input"
-							id="dongYDieuKhoan" name="dongYDieuKhoan" required="required" onchange="xuLyChonDongY()">
+							id="dongYDieuKhoan" name="dongYDieuKhoan" required="required"
+							onchange="xuLyChonDongY()">
 					</div>
 					<div class="mb-3">
 						<label for="dongYNhanMail" class="form-label">Đồng ý nhận
 							email</label> <input type="checkbox" class="form-check-input"
 							id="dongYNhanMail" name="dongYNhanMail">
 					</div>
-					<input class="btn btn-primary form-control" type="submit" 
-						value="Đăng ký" name="submit" id="submit" style="visibility: hidden;" />
+					<input class="btn btn-primary form-control" type="submit"
+						value="Đăng ký" name="submit" id="submit"
+						style="visibility: hidden;" />
 				</div>
 			</div>
 		</form>
@@ -145,24 +203,24 @@
 </body>
 
 <script>
-	function kiemTraMatKhau(){
+	function kiemTraMatKhau() {
 		matKhau = document.getElementById("matKhau").value;
 		matKhauNhapLai = document.getElementById("matKhauNhapLai").value;
-		if(matKhau!=matKhauNhapLai){
+		if (matKhau != matKhauNhapLai) {
 			document.getElementById("msg").innerHTML = "Mật khẩu không khớp!";
 			return false;
-		}else{
+		} else {
 			document.getElementById("msg").innerHTML = "";
 			return true;
 		}
 	}
-	
-	function xuLyChonDongY(){
+
+	function xuLyChonDongY() {
 		dongYDeuKhoan = document.getElementById("dongYDieuKhoan");
-		if(dongYDeuKhoan.checked==true){
-			document.getElementById("submit").style.visibility="visible";
+		if (dongYDeuKhoan.checked == true) {
+			document.getElementById("submit").style.visibility = "visible";
 		} else {
-			document.getElementById("submit").style.visibility="hidden";
+			document.getElementById("submit").style.visibility = "hidden";
 		}
 	}
 </script>
