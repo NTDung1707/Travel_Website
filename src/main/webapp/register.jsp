@@ -119,29 +119,41 @@ body {
 				<div class="col-sm-6">
 					<h3>Tài khoản</h3>
 					<div class="mb-3">
+						<label for="dongYDieuKhoan" class="form-label">Đồng ý với
+							<a>điều khoản của công ty </a><span id="red">*</span>
+						</label> <input type="checkbox" class="form-check-input"
+							id="dongYDieuKhoan" name="dongYDieuKhoan" required="required"
+							onchange="xuLyChonDongY()">
+					</div>
+					<div class="mb-3">
+						<label for="dongYNhanMail" class="form-label">Đồng ý nhận thông báo
+							email</label> <input type="checkbox" class="form-check-input"
+							id="dongYNhanMail" name="dongYNhanMail">
+					</div>
+					<div class="mb-3">
 						<label for="tenDangNhap" class="form-label">Tên đăng nhập<span
 							class="red">*</span></label> <input type="text" class="form-control"
-							id="tenDangNhap" name="tenDangNhap" required="required"
+							id="tenDangNhap" name="tenDangNhap" required="required"  placeholder="Nhập tên đăng nhập của bạn "
 							value="<%=tenDangNhap%>">
 					</div>
 					<div class="mb-3">
 						<label for="matKhau" class="form-label">Mật khẩu<span
 							class="red">*</span></label> <input type="password" class="form-control"
-							id="matKhau" name="matKhau" required="required"
+							id="matKhau" name="matKhau" required="required"  placeholder="Mật khẩu "
 							onkeyup="kiemTraMatKhau()">
 					</div>
 					<div class="mb-3">
 						<label for="matKhauNhapLai" class="form-label">Nhập lại
 							mật khẩu<span class="red">*</span> <span id="msg" class="red"></span>
 						</label> <input type="password" class="form-control" id="matKhauNhapLai"
-							name="matKhauNhapLai" required="required"
+							name="matKhauNhapLai" required="required"  placeholder="Nhập lại mật khẩu "
 							onkeyup="kiemTraMatKhau()">
 					</div>
 					<hr />
 					<h3>Thông tin khách hàng</h3>
 					<div class="mb-3">
-						<label for="hoVaTen" class="form-label">Họ và tên</label> <input
-							type="text" class="form-control" id="hoVaTen" name="hoVaTen"
+						<label for="hoVaTen" class="form-label">Họ và tên<span class="red">*</span> <span id="msg" class="red"></span></label> <input
+							type="text" class="form-control" id="hoVaTen" name="hoVaTen" required="required"  placeholder="Nhập chính xác họ tên của bạn "
 							value="<%=hoVaTen%>">
 					</div>
 					<div class="mb-3">
@@ -167,32 +179,21 @@ body {
 					<div class="mb-3">
 						<label for="diaChiKhachHang" class="form-label">Địa chỉ
 							khách hàng</label> <input type="text" class="form-control"
-							id="diaChiKhachHang" name="diaChiKhachHang"
+							id="diaChiKhachHang" name="diaChiKhachHang"  placeholder="Địa chỉ "
 							value="<%=diaChiKhachHang%>">
 					</div>
 					<div class="mb-3">
-						<label for="dienThoai" class="form-label">Điện thoại</label> <input
-							type="tel" class="form-control" id="dienThoai" name="dienThoai"
+						<label for="dienThoai" class="form-label">Điện thoại<span class="red">*</span> <span id="msg" class="red"></span></label> <input
+							type="tel" class="form-control" id="dienThoai" name="dienThoai" required="required"  placeholder="Số điện thoại "
 							value="<%=dienThoai%>">
 					</div>
 					<div class="mb-3">
-						<label for="email" class="form-label">Email</label> <input
-							type="email" class="form-control" id="email" name="email"
+						<label for="email" class="form-label">Email<span class="red">*</span> <span id="msg" class="red"></span></label> <input
+							type="email" class="form-control" id="email" name="email" required="required" placeholder="Nhập Email để nhận tin nhắn xác thực"
 							value="<%=email%>">
 					</div>
 					<hr />
-					<div class="mb-3">
-						<label for="dongYDieuKhoan" class="form-label">Đồng ý với
-							<a>điều khoản của công ty </a><span id="red">*</span>
-						</label> <input type="checkbox" class="form-check-input"
-							id="dongYDieuKhoan" name="dongYDieuKhoan" required="required"
-							onchange="xuLyChonDongY()">
-					</div>
-					<div class="mb-3">
-						<label for="dongYNhanMail" class="form-label">Đồng ý nhận
-							email</label> <input type="checkbox" class="form-check-input"
-							id="dongYNhanMail" name="dongYNhanMail">
-					</div>
+					
 					<input class="btn btn-primary form-control" type="submit"
 						value="Đăng ký" name="submit" id="submit"
 						style="visibility: hidden;" />
@@ -203,7 +204,7 @@ body {
 </body>
 
 <script>
-	function kiemTraMatKhau() {
+/*	function kiemTraMatKhau() {
 		matKhau = document.getElementById("matKhau").value;
 		matKhauNhapLai = document.getElementById("matKhauNhapLai").value;
 		if (matKhau != matKhauNhapLai) {
@@ -214,7 +215,7 @@ body {
 			return true;
 		}
 	}
-
+*/
 	function xuLyChonDongY() {
 		dongYDeuKhoan = document.getElementById("dongYDieuKhoan");
 		if (dongYDeuKhoan.checked == true) {
