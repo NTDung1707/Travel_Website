@@ -13,6 +13,9 @@
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
         <link rel="stylesheet" href="img/themify-icons/themify-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     </head>
     <body>
         <section style="background-image: url('img/Hinh-anh-thanh-pho-Da-Nang-dep-an-tuong-nhat.jpg'); background-size: cover; background-position: center;">
@@ -56,13 +59,20 @@
 							Đăng kí
 						</a> -->
 					<%} else { %>
-						<div class="row text-center" style="margin-left: 0.25em">
-							<div class="row"><b><%= khachHang.getTenDangNhapString() %></b></div>
-							<div class="row"><a style="white-space: nowrap;" href="dang-xuat">
-								Đăng xuất
-							</a>
-							</div>
-						</div>
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-infor ">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								    <i class="fa-solid fa-user" style="color: #1E3050;"></i> <%= khachHang.getTenDangNhapString() %>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Đơn hàng của tôi</a></li>
+									<li><a class="dropdown-item" href="#">Thông báo</a></li>
+									<li><a class="dropdown-item" href="#">Thay đổi thông tin</a></li>
+									<li><a class="dropdown-item" href="doimatkhau.jsp">Đổi mật khẩu</a></li>
+									<li><a class="dropdown-item" href="doimatkhau.jsp">Xoá tài khoản</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="dang-xuat">Đăng Xuất</a></li>
+								</ul></li>
+						</ul>
 					<% } %>
 				
 						
