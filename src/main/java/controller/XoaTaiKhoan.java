@@ -1,5 +1,6 @@
 package controller;
 
+
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -13,17 +14,18 @@ import javax.servlet.http.HttpSession;
 import database.KhachHangDAO;
 import model.KhachHang;
 
+
 /**
- * Servlet implementation class DoiMatKhau
+ * Servlet implementation class XoaTaiKhoan
  */
-@WebServlet("/doi-mat-khau")
-public class DoiMatKhau extends HttpServlet {
+@WebServlet("/xoataikhoan")
+public class XoaTaiKhoan extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DoiMatKhau() {
+    public XoaTaiKhoan() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,15 +34,13 @@ public class DoiMatKhau extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String matKhauHienTai = request.getParameter("matKhauHienTai") ; 
-		String matKhauMoi = request.getParameter("matKhauMoi") ; 
-		String matKhauMoiNhapLai = request.getParameter("matKhauMoiNhapLai") ; 
+		
+		String matKhauXacNhan = request.getParameter("matKhauXacNhan") ; 
 		String url= " " ;
 		KhachHang kh = new KhachHang();
-		String baoLoi = "";
-		url = "/doimatkhau.jsp";
+		String baoLoi = ""; 
+		url = "/xoataikhoan.jsp";
 		
-		// Kiem tra mat khau cu co giong hay khong
 		HttpSession session = request.getSession();
 		Object obj = session.getAttribute("khachHang");
 		KhachHang khachHang = null;
@@ -50,26 +50,23 @@ public class DoiMatKhau extends HttpServlet {
 		if(khachHang==null) {
 			baoLoi = "Bạn chưa đăng nhập vào hệ thống!";
 		}else {
-			// Neu khach hang da dang nhap
-			if(!matKhauHienTai.equals(khachHang.getMatkhauString())){
-				baoLoi = "Mật khẩu hiện tại không chính xác!";
+			if(!matKhauXacNhan.equals(khachHang.getMatkhauString())){
+				baoLoi = "Mật khẩu không chính xác!";
 			}else {
-				if(!matKhauMoi.equals(matKhauMoiNhapLai)) {
-					baoLoi = "Mật khẩu nhập lại không khớp!";
+				KhachHangDAO khd = new KhachHangDAO();
+				if(khd.deletekh(khachHang)) {
+					baoLoi = "Xoá Tài Khoản Thành Công !";
+//					 url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+//					+ request.getContextPath();
+//				
+//					response.sendRedirect(url+"index.jsp");
+					url = "/dang-xuat" ; 
 				}else {
-					khachHang.setMatkhauString(matKhauMoi);
-					KhachHangDAO khd = new KhachHangDAO();
-					if(khd.changePassword(khachHang)) {
-						baoLoi = "Mật khẩu đã thay đổi thành công!";
-						url = "/index.jsp" ;
-					}else {
-						baoLoi = "Thay đổi mật khẩu không thành công!";
-						url = "/doimatkhau.jsp" ;
-					}
+					baoLoi = "Xoá Tài Khoản Không Thành Công!";
+					//url = "/xoataikhoan.jsp" ;
 				}
 			}
 		}
-		
 		request.setAttribute("baoLoi", baoLoi);
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
 		rd.forward(request, response);

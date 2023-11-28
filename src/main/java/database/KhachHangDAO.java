@@ -251,6 +251,36 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 
 		return ketQua;
 	}
+	
+	public Boolean deletekh(KhachHang t) {
+		int ketQua = 0;
+		try {
+			// Bước 1: tạo kết nối đến CSDL
+			Connection con = JDBCUtil.getConnection();
+
+			// Bước 2: tạo ra đối tượng statement
+			String sql = "DELETE from khachhang " + " WHERE makhachhang=?";
+
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, t.getMaKhachHangString());
+
+			// Bước 3: thực thi câu lệnh SQL
+			System.out.println(sql);
+			ketQua = st.executeUpdate();
+
+			// Bước 4:
+			System.out.println("Bạn đã thực thi: " + sql);
+			System.out.println("Có " + ketQua + " dòng bị thay đổi!");
+
+			// Bước 5:
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ketQua >  0 ;
+	}
 
 	@Override
 	public int deleteAll(ArrayList<KhachHang> arr) {
