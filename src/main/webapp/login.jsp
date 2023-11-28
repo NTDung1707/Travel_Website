@@ -87,7 +87,7 @@ String url = request.getScheme() + "://" + request.getServerName() + ":" + reque
 			%>
 			<div class="text-center"><span class="red"><%=baoLoi %></span></div>
 			<div class="form-floating">
-				<input type="text" class="form-control" id="tenDangNhap"
+				<input type="text" class="form-control" id="tenDangNhap" 
 					placeholder="Tên đăng nhập" name="tenDangNhap"> <label for="tenDangNhap">Tên đăng nhập</label>
 			</div>
 			<div class="form-floating">

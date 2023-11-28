@@ -40,7 +40,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 				Date ngaySinh = rs.getDate("ngaysinh");
 				String soDienThoai = rs.getString("sodienthoai");
 				String email = rs.getString("email");
-				boolean dangKyNhanBangTin = rs.getBoolean("dangkynhanbangtin");
+				boolean dangKyNhanBangTin = rs.getBoolean("dangkinhanbangtin");
 
 				KhachHang kh = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh, diaChi,
 						 ngaySinh, soDienThoai, email, dangKyNhanBangTin);
@@ -335,7 +335,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 	public static void main(String[] args) {
 	    // Tạo một đối tượng KhachHang
 	    KhachHang khachHang = new KhachHang();
-	    khachHang.setMaKhachHangString("1232");
+	    khachHang.setMaKhachHangString("1239");
 	    khachHang.setTenDangNhapString("testUser");
 	    khachHang.setMatkhauString("testPassword");
 	    khachHang.setHoVaTenString("Nguyen Van Test");

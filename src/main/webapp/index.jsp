@@ -61,16 +61,16 @@
 					<%} else { %>
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-infor ">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								    <i class="fa-solid fa-user" style="color: #1E3050;"></i> <%= khachHang.getTenDangNhapString() %>
+								    <i class="fa-solid fa-user" style="color: #3294F1;"></i> <%= khachHang.getTenDangNhapString() %>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">Đơn hàng của tôi</a></li>
-									<li><a class="dropdown-item" href="#">Thông báo</a></li>
-									<li><a class="dropdown-item" href="#">Thay đổi thông tin</a></li>
-									<li><a class="dropdown-item" href="doimatkhau.jsp">Đổi mật khẩu</a></li>
-									<li><a class="dropdown-item" href="doimatkhau.jsp">Xoá tài khoản</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fa-solid fa-cart-shopping" style="color: black;"></i>  Đơn hàng của tôi</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fa-solid fa-bell" style="color: black;"></i>   Thông báo</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-plus" style="color: black;"></i> Thay đổi thông tin</a></li>
+									<li><a class="dropdown-item" href="doimatkhau.jsp"><i class="fa-solid fa-key" style="color: black;"></i>  Đổi mật khẩu</a></li>
+									<li><a class="dropdown-item" href="doimatkhau.jsp"><i class="fa-solid fa-user-large-slash" style="color: black;"></i>  Xoá tài khoản</a></li>
 									<li><hr class="dropdown-divider"></li>
-									<li><a class="dropdown-item" href="dang-xuat">Đăng Xuất</a></li>
+									<li><a class="dropdown-item" href="dang-xuat"><i class="fa-solid fa-door-open" style="color: black;"></i>  Đăng Xuất</a></li>
 								</ul></li>
 						</ul>
 					<% } %>
