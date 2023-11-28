@@ -68,7 +68,7 @@
 									<li><a class="dropdown-item" href="#"><i class="fa-solid fa-bell" style="color: black;"></i>   Thông báo</a></li>
 									<li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-plus" style="color: black;"></i> Thay đổi thông tin</a></li>
 									<li><a class="dropdown-item" href="doimatkhau.jsp"><i class="fa-solid fa-key" style="color: black;"></i>  Đổi mật khẩu</a></li>
-									<li><a class="dropdown-item" href="doimatkhau.jsp"><i class="fa-solid fa-user-large-slash" style="color: black;"></i>  Xoá tài khoản</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-large-slash" style="color: black;"></i>  Xoá tài khoản</a></li>
 									<li><hr class="dropdown-divider"></li>
 									<li><a class="dropdown-item" href="dang-xuat"><i class="fa-solid fa-door-open" style="color: black;"></i>  Đăng Xuất</a></li>
 								</ul></li>
