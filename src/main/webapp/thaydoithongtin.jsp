@@ -1,3 +1,4 @@
+<%@page import="model.KhachHang"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Đăng ký</title>
+<title>Thay Đổi Thông Tin</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -72,84 +73,56 @@ body {
 </style>
 </head>
 <body style="background-image: url('img/Hinh-anh-thanh-pho-Da-Nang-dep-an-tuong-nhat.jpg'); background-size: cover; background-position: center;">
+	
 	<%
-	String baoLoi = request.getAttribute("baoLoi") + "";
-	baoLoi = (baoLoi.equals("null")) ? "" : baoLoi;
+		Object obj = session.getAttribute("khachHang");
+		KhachHang khachHang = null;
+		if (obj!=null)
+			khachHang = (KhachHang)obj;		
+			if(khachHang==null){		
+	%>
+	<h1>Bạn chưa đăng nhập vào hệ thống. Vui lòng quay lại trang chủ!</h1>
+	<%
+			}else {
+				String baoLoi = request.getAttribute("baoLoi")+"";
+				if(baoLoi.equals("null")){
+					baoLoi = "";
+				}
+	%>
 
-	String tenDangNhap = request.getAttribute("tenDangNhap") + "";
-	tenDangNhap = (tenDangNhap.equals("null")) ? "" : tenDangNhap;
+	<div class ="container">
+	<%
 
-	String hoVaTen = request.getAttribute("hoVaTen") + "";
-	hoVaTen = (hoVaTen.equals("null")) ? "" : hoVaTen;
 
-	String gioiTinh = request.getAttribute("gioiTinh") + "";
-	gioiTinh = (gioiTinh.equals("null")) ? "" : gioiTinh;
+	
 
-	String ngaySinh = request.getAttribute("ngaySinh") + "";
-	ngaySinh = (ngaySinh.equals("null")) ? "" : ngaySinh;
+	String hoVaTen = khachHang.getHoVaTenString() ; 
 
-	String diaChiKhachHang = request.getAttribute("diaChiKhachHang") + "";
-	diaChiKhachHang = (diaChiKhachHang.equals("null")) ? "" : diaChiKhachHang;
+	String gioiTinh = khachHang.getGioitinhString();
+	
+	String ngaySinh = khachHang.getNgaysinhDate().toString();
+	
+	String diaChiKhachHang = khachHang.getDiachiString();
 
-	String diaChiMuaHang = request.getAttribute("diaChiMuaHang") + "";
-	diaChiMuaHang = (diaChiMuaHang.equals("null")) ? "" : diaChiMuaHang;
+	String dienThoai = khachHang.getSoDienthoaiString();
 
-	String diaChiNhanHang = request.getAttribute("diaChiNhanHang") + "";
-	diaChiNhanHang = (diaChiNhanHang.equals("null")) ? "" : diaChiNhanHang;
+	String email = khachHang.getEmail();
 
-	String dienThoai = request.getAttribute("dienThoai") + "";
-	dienThoai = (dienThoai.equals("null")) ? "" : dienThoai;
+	boolean dongYNhanMail= khachHang.isDangKyNhanBangTin();
 
-	String email = request.getAttribute("email") + "";
-	email = (email.equals("null")) ? "" : email;
 
-	String dongYNhanMail = request.getAttribute("dongYNhanMail") + "";
-	dongYNhanMail = (dongYNhanMail.equals("null")) ? "" : dongYNhanMail;
 	%>
 	<div class="container">
 		<div class="text-center">
-			<h1>ĐĂNG KÝ TÀI KHOẢN</h1>
+			<h1>THÔNG TIN TÀI KHOẢN</h1>
 		</div>
 
 		<div class="red" id="baoLoi">
 			<%=baoLoi%>
 		</div>
-		<form class="form" action="do-Register" method="post">
+		<form class="form" action="thay-doi-thong-tin" method="post">
 			<div class="row">
 				<div class="col-sm-6">
-					<h3>Tài khoản</h3>
-					<div class="mb-3">
-						<label for="dongYDieuKhoan" class="form-label">Đồng ý với
-							<a>điều khoản của công ty </a><span id="red">*</span>
-						</label> <input type="checkbox" class="form-check-input"
-							id="dongYDieuKhoan" name="dongYDieuKhoan" required="required"
-							onchange="xuLyChonDongY()">
-					</div>
-					<div class="mb-3">
-						<label for="dongYNhanMail" class="form-label">Đồng ý nhận thông báo
-							email</label> <input type="checkbox" class="form-check-input"
-							id="dongYNhanMail" name="dongYNhanMail">
-					</div>
-					<div class="mb-3">
-						<label for="tenDangNhap" class="form-label">Tên đăng nhập<span
-							class="red">*</span></label> <input type="text" class="form-control"
-							id="tenDangNhap" name="tenDangNhap" required="required"  placeholder="Nhập tên đăng nhập của bạn "
-							value="<%=tenDangNhap%>">
-					</div>
-					<div class="mb-3">
-						<label for="matKhau" class="form-label">Mật khẩu<span
-							class="red">*</span></label> <input type="password" class="form-control"
-							id="matKhau" name="matKhau" required="required"  placeholder="Mật khẩu "
-							onkeyup="kiemTraMatKhau()">
-					</div>
-					<div class="mb-3">
-						<label for="matKhauNhapLai" class="form-label">Nhập lại
-							mật khẩu<span class="red">*</span> <span id="msg" class="red"></span>
-						</label> <input type="password" class="form-control" id="matKhauNhapLai"
-							name="matKhauNhapLai" required="required"  placeholder="Nhập lại mật khẩu "
-							onkeyup="kiemTraMatKhau()">
-					</div>
-					<hr />
 					<h3>Thông tin khách hàng</h3>
 					<div class="mb-3">
 						<label for="hoVaTen" class="form-label">Họ và tên<span class="red">*</span> <span id="msg" class="red"></span></label> <input
@@ -179,7 +152,7 @@ body {
 					<div class="mb-3">
 						<label for="diaChiKhachHang" class="form-label">Địa chỉ
 							khách hàng</label> <input type="text" class="form-control"
-							id="diaChi" name="diaChi"  placeholder="Địa chỉ "
+							id="diaChiKhachHang" name="diaChiKhachHang"  placeholder="Địa chỉ "
 							value="<%=diaChiKhachHang%>">
 					</div>
 					<div class="mb-3">
@@ -192,38 +165,22 @@ body {
 							type="email" class="form-control" id="email" name="email" required="required" placeholder="Nhập Email để nhận tin nhắn xác thực"
 							value="<%=email%>">
 					</div>
+					<div class="mb-3">
+						<label for="dongYNhanMail" class="form-label">Đồng ý nhận
+							email</label> <input type="checkbox" class="form-check-input"
+							id="dongYNhanMail" name="dongYNhanMail" <%=(dongYNhanMail?"checked":"")%> >
+					</div>
 					<hr />
 					
 					<input class="btn btn-primary form-control" type="submit"
-						value="Đăng ký" name="submit" id="submit"
-						style="visibility: hidden;" />
+						value="Lưu Thông Tin" name="submit" id="submit"
+						" />
 				</div>
 			</div>
 		</form>
 	</div>
+	</div>
+	<% } %>
 </body>
-
-<script>
-/*	function kiemTraMatKhau() {
-		matKhau = document.getElementById("matKhau").value;
-		matKhauNhapLai = document.getElementById("matKhauNhapLai").value;
-		if (matKhau != matKhauNhapLai) {
-			document.getElementById("msg").innerHTML = "Mật khẩu không khớp!";
-			return false;
-		} else {
-			document.getElementById("msg").innerHTML = "";
-			return true;
-		}
-	}
-*/
-	function xuLyChonDongY() {
-		dongYDeuKhoan = document.getElementById("dongYDieuKhoan");
-		if (dongYDeuKhoan.checked == true) {
-			document.getElementById("submit").style.visibility = "visible";
-		} else {
-			document.getElementById("submit").style.visibility = "hidden";
-		}
-	}
-</script>
 
 </html>

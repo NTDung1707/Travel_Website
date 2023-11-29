@@ -332,6 +332,44 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 
 		return ketQua;
 	}
+	public int updateInfo(KhachHang t) {
+		int ketQua = 0;
+		try {
+			// Bước 1: tạo kết nối đến CSDL
+			Connection con = JDBCUtil.getConnection();
+
+			// Bước 2: tạo ra đối tượng statement
+			String sql = "UPDATE khachhang SET hoten=?, gioitinh=?, diachi=?, ngaysinh=?, sodienthoai=?, email=?, dangkinhanbangtin=? WHERE makhachhang=?";
+
+
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setString(1, t.getHoVaTenString());
+			st.setString(2, t.getGioitinhString());
+			st.setString(3, t.getDiachiString());
+			st.setDate(4, t.getNgaysinhDate());
+			st.setString(5, t.getSoDienthoaiString());
+			st.setString(6, t.getEmail());
+			st.setBoolean(7, t.isDangKyNhanBangTin());
+			st.setString(8, t.getMaKhachHangString());
+			// Bước 3: thực thi câu lệnh SQL
+
+			System.out.println(sql);
+			ketQua = st.executeUpdate();
+
+			// Bước 4:
+			System.out.println("Bạn đã thực thi: " + sql);
+			System.out.println("Có " + ketQua + " dòng bị thay đổi!");
+
+			// Bước 5:
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ketQua;
+	}
 	
 	public boolean kiemtraTenDangNhap(String tenDangNhap) {
 		boolean ketQua = false ; 
@@ -393,14 +431,14 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 	}
 	
 	public static void main(String[] args) {
-	    // Tạo một đối tượng KhachHang
+//	    // Tạo một đối tượng KhachHang
 	    KhachHang khachHang = new KhachHang();
-	    khachHang.setMaKhachHangString("1239");
+	    khachHang.setMaKhachHangString("123998");
 	    khachHang.setTenDangNhapString("testUser");
 	    khachHang.setMatkhauString("testPassword");
-	    khachHang.setHoVaTenString("Nguyen Van Test");
+	    khachHang.setHoVaTenString("Nguyen Van B");
 	    khachHang.setGioitinhString("Nam");
-	    khachHang.setDiachiString("123 Test Street");
+    khachHang.setDiachiString("123 Test Street hoot");
 	    khachHang.setNgaysinhDate(new Date(System.currentTimeMillis()));
 	    khachHang.setSoDienthoaiString("123456789");
 	    khachHang.setEmail("test@example.com");
@@ -409,9 +447,21 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 	    // Gọi hàm insert để chèn đối tượng vào CSDL
 	    KhachHangDAO khachHangDAO = new KhachHangDAO();
 	    int result = khachHangDAO.insert(khachHang);
-
-	    // In kết quả
-	  //  System.out.println("Số dòng bị thay đổi: " + result);
+	    
+//		 KhachHang khachHang1 = new KhachHang();
+//		    khachHang1.setHoVaTenString("Nguyen Van Test");
+//		    khachHang1.setGioitinhString("Nữ");
+//		    khachHang1.setDiachiString("123 Test Street");
+//		    khachHang1.setNgaysinhDate(new Date(System.currentTimeMillis()));
+//		    khachHang1.setSoDienthoaiString("123456789");
+//		    khachHang1.setEmail("test123@example.com");
+//		    khachHang1.setDangKyNhanBangTin(true);
+//
+//		    KhachHangDAO khachHangDAO1 = new KhachHangDAO();
+//		    int result1 = khachHangDAO1.updateInfo(khachHang1);
+//
+//		    // In kết quả
+//		    System.out.println("Số dòng bị thay đổi: " + result1);
 	}
 
 }
