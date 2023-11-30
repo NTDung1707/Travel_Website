@@ -83,34 +83,55 @@
         <script src="" async defer></script>
         <div class="hotel-section">
         	<div class="text-content">
-        		<h2 class="text-heading">HOTEL</h2>
+        		<h2 class="text-heading">DESTINATIONS</h2>
         		<p class="text-des">
-        			<i>Choose your favorite hotel</i>
+        			<i>Choose your favorite destination</i>
         		</p>
         	</div>
         	<div class="div-father">
         		<div class="div-son">
-				    <img src="img/hotel/khachsan1.jpg" alt="mo ta anh">
+				    <img src="img/destinations/Golden Bridge.jpg" alt="mo ta anh">
 				    <div class="body-son">
-				      <h3 class="heading-des">HoiAnb</h3>
-				      <p class="location">Thanh Khe, Da Nang</p>
+				      <h3 class="heading-des">Ba Na Hills</h3>
+				      <p class="location">Hoa Vang, Da Nang</p>
 				      <button href="#" class="view-hotel js-view">View</button>
+				      <button href="#" class="booking">Booking</button>
 				    </div>
 				 </div>
 				 <div class="div-son">
-				    <img src="img/hotel/khachsan2.jpg" alt="mo ta anh">
+				    <img src="img/destinations/Than Tai mountain.jpg" alt="mo ta anh">
 				    <div class="body-son">
-				      <h3 class="heading-des">Sa Hakimi</h3>
-				      <p class="location">Lien Chieu, Da Nang</p>
+				      <h3 class="heading-des">Than Tai Mountain</h3>
+				      <p class="location">Hoa Vang, Da Nang</p>
 				       <button href="#" class="view-hotel2 js-view2">View</button>
+				       <button href="#" class="booking2">Booking</button>
 				    </div>
 				 </div>
 				 <div class="div-son">
-				    <img src="img/hotel/khachsan3.jpg" alt="mo ta anh">
+				    <img src="img/destinations/Water Park.jpg" alt="mo ta anh">
 				    <div class="body-son">
-				      <h3 class="heading-des">Maria LM</h3>
-				      <p class="location">Son Tra, Da Nang</p>
+				      <h3 class="heading-des">Mikazuki Water Park</h3>
+				      <p class="location">Lien Chieu, Da Nang</p>
 				      <button href="#" class="view-hotel3 js-view3">View</button>
+				      <button href="#" class="booking3">Booking</button>
+				    </div>
+				 </div>
+				 <div class="div-son">
+				    <img src="img/destinations/Han River.jpg" alt="mo ta anh">
+				    <div class="body-son">
+				      <h3 class="heading-des">Han River</h3>
+				      <p class="location">Hai Chau, Da Nang</p>
+				      <button href="#" class="view-hotel4 js-view4">View</button>
+				      <button href="#" class="booking4">Booking</button>
+				    </div>
+				 </div>
+				 <div class="div-son">
+				    <img src="img/destinations/Asia Park.jpg" alt="mo ta anh">
+				    <div class="body-son">
+				      <h3 class="heading-des">Asia Park</h3>
+				      <p class="location">Hai Chau, Da Nang</p>
+				      <button href="#" class="view-hotel5 js-view5">View</button>
+				      <button href="#" class="booking5">Booking</button>
 				    </div>
 				 </div>
 				 <div class="clear"></div>
@@ -123,21 +144,23 @@
         		</div>
         	
         		<h1 class="modal-header">
-        			Viewing Hotel
+        			Viewing Destination
         		</h1>
         		<div class="modal-body">
-        			<img src="img/hotel/khachsan1.jpg" atl="mo ta anh">
-        			<div class="modal-body-des">
-        				<p class="modal-heading">Name: HoiAnb</p>
-        				<p class="modal-location">Location: Thanh Khe, Da Nang</p>
-        				<p class="modal-price">Prices: 150$ per night</p>
-        				<p class="modal-amenities">
-        					<ul>Amenities: 
-        						<li class="amenities-des">Having swimming pool</li>
-        						<li class="amenities-des">Offer free breakfast</li>
-        					</ul>
-        				</p>
-        			</div>
+        			<img src="img/destinations/Golden Bridge.jpg" atl="mo ta anh">
+        			<ul class="modal-body-des">
+        				<li>Name: Golden Bridge</li>
+        				<li>Location: Hoa Ninh, Hoa Vang, Da Nang</li>
+        				<li>Price: 40$</li>
+        				<li>Open time: All Day</li>
+        				<li>Highlight:</li>
+        				<ul>
+        						<li class="highlight">Take advantage of the wonderful view of Ba Na Peak standing on the Golden Bridge, one of the most beautiful bridges in the world</li>
+        						<li class="highlight">Admire the majestic beauty of Chua Mountain from the cable car</li>
+        						<li class="highlight">Visit the French village with its exquisite architectural gardens</li>
+        						<li class="highlight">Have fun at Fantasty Park</li>
+        				</ul>
+        			</ul>
         		</div>
         		<div class="modal-footer">
         			<p class="modal-help">Need <a href="">help!</a></p>
@@ -151,22 +174,23 @@
         		</div>
         	
         		<h1 class="modal2-header">
-        			Viewing Hotel
+        			Viewing Destination
         		</h1>
         		<div class="modal2-body">
-        			<img src="img/hotel/khachsan2.jpg" atl="mo ta anh">
-        			<div class="modal2-body-des">
-        				<p class="modal-heading">Name: Sa Hakimi</p>
-        				<p class="modal-location">Location: Lien Chieu, Da Nang</p>
-        				<p class="modal-price">Prices: 150$ per night</p>
-        				<p class="modal-amenities">
-        					<ul>Amenities: 
-        						<li class="amenities-des">Discount 20% for over 4 people</li>
-        						<li class="amenities-des">Offer free breakfast</li>
-        						<li class="amenities-des">Using free gym room</li>
-        					</ul>
-        				</p>
-        			</div>
+        			<img src="img/destinations/Than Tai mountain.jpg" atl="mo ta anh">
+        			<ul class="modal2-body-des">
+        				<li>Name: Than Tai Mountain</li>
+        				<li>Location: QL14G, Hoa Phu, Hoa Vang, Da Nang</li>
+        				<li>Price: 25$</li>
+        				<li>Open time: 8:30 AM - 5:30 PM</li>
+        				<li>Highlight:</li>
+        				<ul>
+        						<li class="highlight">Have fun with many exciting games available at the water park with your friends and family</li>
+        						<li class="highlight">Enjoy the swimming pool, Jacuzzi and Japanese Onsen bathing area</li>
+        						<li class="highlight">Show off in the mud arena</li>
+        						<li class="highlight">Team up to explore the fascinating Dinosaur Park</li>
+        				</ul>
+        			</ul>
         		</div>
         		<div class="modal-footer">
         			<p class="modal-help">Need <a href="">help!</a></p>
@@ -180,40 +204,108 @@
         		</div>
         	
         		<h1 class="modal3-header">
-        			Viewing Hotel
+        			Viewing Destination
         		</h1>
         		<div class="modal3-body">
-        			<img src="img/hotel/khachsan3.jpg" atl="mo ta anh">
-        			<div class="modal3-body-des">
-        				<p class="modal-heading">Name: Maria LM</p>
-        				<p class="modal-location">Location: Son Tra, Da Nang</p>
-        				<p class="modal-price">Prices: 200$ per night</p>
-        				<p class="modal-amenities">
-        					<ul>Amenities: 
-        						<li class="amenities-des">Having swimming pool</li>
-        						<li class="amenities-des">Offer free breakfast</li>
-        						<li class="amenities-des">Using free gym room</li>
-        					</ul>
-        				</p>
-        			</div>
+        			<img src="img/destinations/Water Park.jpg" atl="mo ta anh">
+        			<ul class="modal3-body-des">
+        				<li>Name: Mikazuki Water Park</li>
+        				<li>Location: Nguyen Tat Thanh Street, Hoa Hiep Nam, Lien Chieu, Da Nang</li>
+        				<li>Price: 20$</li>
+        				<li>Open time: All day</li>
+        				<li>Highlight:</li>
+        				<ul>
+        						<li class="highlight">Experience a Japanese-style water park with friends at Water Park</li>
+        						<li class="highlight">Enjoy playing in indoor wave pools, water slides and hot mineral onsen baths all day.</li>
+        						<li class="highlight">Explore the entertainment area integrating health care and beauty services available at the water park</li>
+        						<li class="highlight">Enjoy a scrumptious buffet lunch and set menu meals</li>
+        				</ul>
+        			</ul>
         		</div>
         		<div class="modal-footer">
         			<p class="modal-help">Need <a href="">help!</a></p>
         		</div>
         	</div>
         </div>
+        <div class="modal4 js-modal4">
+        	<div class="modal4-container">
+        		<div class="modal4-close js-modal4-close">
+        			<i class="ti-close"></i>
+        		</div>
+        	
+        		<h1 class="modal4-header">
+        			Viewing Destination
+        		</h1>
+        		<div class="modal4-body">
+        			<img src="img/destinations/Han River.jpg" atl="mo ta anh">
+        			<ul class="modal4-body-des">
+        				<li>Name: Han River</li>
+        				<li>Location: QL14G, Hoa Phu, Hoa Vang, Da Nang</li>
+        				<li>Price: 25$</li>
+        				<li>Open time: 8:30 AM - 5:30 PM</li>
+        				<li>Highlight:</li>
+        				<ul>
+        						<li class="highlight">Have fun with many exciting games available at the water park with your friends and family</li>
+        						<li class="highlight">Enjoy the swimming pool, Jacuzzi and Japanese Onsen bathing area</li>
+        						<li class="highlight">Show off in the mud arena</li>
+        						<li class="highlight">Team up to explore the fascinating Dinosaur Park</li>
+        				</ul>
+        			</ul>
+        		</div>
+        		<div class="modal-footer">
+        			<p class="modal-help">Need <a href="">help!</a></p>
+        		</div>
+        	</div>
+        </div>
+        <div class="modal5 js-modal5">
+        	<div class="modal5-container">
+        		<div class="modal5-close js-modal5-close">
+        			<i class="ti-close"></i>
+        		</div>
+        	
+        		<h1 class="modal5-header">
+        			Viewing Destination
+        		</h1>
+        		<div class="modal5-body">
+        			<img src="img/destinations/Asia Park.jpg" atl="mo ta anh">
+        			<ul class="modal5-body-des">
+        				<li>Name: Han River</li>
+        				<li>Location: QL14G, Hoa Phu, Hoa Vang, Da Nang</li>
+        				<li>Price: 25$</li>
+        				<li>Open time: 8:30 AM - 5:30 PM</li>
+        				<li>Highlight:</li>
+        				<ul>
+        						<li class="highlight">Have fun with many exciting games available at the water park with your friends and family</li>
+        						<li class="highlight">Enjoy the swimming pool, Jacuzzi and Japanese Onsen bathing area</li>
+        						<li class="highlight">Show off in the mud arena</li>
+        						<li class="highlight">Team up to explore the fascinating Dinosaur Park</li>
+        				</ul>
+        			</ul>
+        		</div>
+        		<div class="modal-footer">
+        			<p class="modal-help">Need <a href="">help!</a></p>
+        		</div>
+        	</div>
+        </div>
+     
         
         
        <script type="text/javascript">
        		const viewHotel = document.querySelector('.js-view');
        		const viewHotel2 = document.querySelector('.js-view2');
        		const viewHotel3 = document.querySelector('.js-view3');
+       		const viewHotel4 = document.querySelector('.js-view4');
+       		const viewHotel5 = document.querySelector('.js-view5');
        		const modal = document.querySelector('.js-modal');
        		const modal2 = document.querySelector('.js-modal2');
        		const modal3 = document.querySelector('.js-modal3');
+       		const modal4 = document.querySelector('.js-modal4');
+       		const modal5 = document.querySelector('.js-modal5');
        		const modalClose = document.querySelector('.js-modal-close');
        		const modalClose2 = document.querySelector('.js-modal2-close');
        		const modalClose3 = document.querySelector('.js-modal3-close');
+       		const modalClose4 = document.querySelector('.js-modal4-close');
+       		const modalClose5 = document.querySelector('.js-modal5-close');
        		
        		// show
        		function showHotel() {
@@ -226,6 +318,14 @@
        		
        		function showHotel3() {
        			modal3.classList.add('open'); 
+       		}
+       		
+       		function showHotel4() {
+       			modal4.classList.add('open'); 
+       		}
+       		
+       		function showHotel5() {
+       			modal5.classList.add('open'); 
        		}
        		
        		
@@ -242,13 +342,25 @@
        			modal3.classList.remove('open');
        		}
        		
+       		function hideHotel4() {
+       			modal4.classList.remove('open');
+       		}
+       		
+       		function hideHotel5() {
+       			modal5.classList.remove('open');
+       		}
+       		
        		viewHotel.addEventListener('click', showHotel);
        		viewHotel2.addEventListener('click', showHotel2);
        		viewHotel3.addEventListener('click', showHotel3);
+       		viewHotel4.addEventListener('click', showHotel4);
+       		viewHotel5.addEventListener('click', showHotel5);
        		
        		modalClose.addEventListener('click', hideHotel);
        		modalClose2.addEventListener('click', hideHotel2);
        		modalClose3.addEventListener('click', hideHotel3);
+       		modalClose4.addEventListener('click', hideHotel4);
+       		modalClose5.addEventListener('click', hideHotel5);
        </script>
     </body>
 </html>

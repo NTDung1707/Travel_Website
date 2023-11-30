@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Đăng ký thành công</title>
+    <title>Thay đổi thông tin thành công</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -53,10 +53,8 @@
 </head>
 <body>
     <div class="container">
-        <h2>Bạn đã đăng ký tài khoản thành công !!</h2>
-        <a href="index.jsp">Trang chủ</a>
-        <a href="login.jsp">Đăng nhập</a>
-        
+        <h2>Thay đổi Thông Tin thành công!</h2>
+        <a href="index.jsp">Quay lại trang chủ</a>
     </div>
 </body>
 </html>

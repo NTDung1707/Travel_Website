@@ -73,7 +73,8 @@ public class ThayDoiThongTin extends HttpServlet {
 					khachHangDAO.updateInfo(kh);
 					KhachHang kh2 = khachHangDAO.selectById(kh);
 					request.getSession().setAttribute("khachHang", kh2);
-					url = "/index.jsp";
+					url = "/ThayDoiThongTinThanhCong.jsp";
+					
 				}
 			
 		}

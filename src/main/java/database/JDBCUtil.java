@@ -20,7 +20,7 @@ public class JDBCUtil {
 			
 			
 			// Các thông số
-			String url = "jdbc:sqlserver://DESKTOP-7TJJGAG\\SQLEXPRESS:1433;databaseName=myweb"+ 
+			String url = "jdbc:sqlserver://ADMIN-PC\\QUOCHUNG:1433;databaseName=Website"+ 
 						";encrypt=true;trustServerCertificate=true";
 			
 			String username = "sa";

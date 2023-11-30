@@ -61,7 +61,7 @@ public class DoiMatKhau extends HttpServlet {
 					KhachHangDAO khd = new KhachHangDAO();
 					if(khd.changePassword(khachHang)) {
 						baoLoi = "Mật khẩu đã thay đổi thành công!";
-						url = "/index.jsp" ;
+						url = "/ThayDoiMatKhauThanhCong.jsp" ;
 					}else {
 						baoLoi = "Thay đổi mật khẩu không thành công!";
 						url = "/doimatkhau.jsp" ;

@@ -13,8 +13,10 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
 	integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
 	crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/XoaTaiKhoan.css">
+	
 </head>
-<body >
+<body style="background-image: url('img/Hinh-anh-thanh-pho-Da-Nang-dep-an-tuong-nhat.jpg'); background-size: cover; background-position: center; padding:200px;	 ">
 	<%
 		Object obj = session.getAttribute("khachHang");
 		KhachHang khachHang = null;
@@ -32,14 +34,15 @@
 	%>
 	<div class="container">
 		<h1>XOÁ TÀI KHOẢN </h1>
-		<span style="color: red">
-			<%=baoLoi%>
-		</span>
+		
 		<form action="xoataikhoan" method="POST">
 		  <div class="mb-3">
 		    <label for="matKhauXacNhan" class="form-label">Mật khẩu xác nhận</label>
 		    <input type="password" class="form-control" id="matKhauXacNhan" name="matKhauXacNhan">
 		  </div>
+		  <span style="color: red">
+			<%=baoLoi%>
+		</span>
 		  <button type="submit" class="btn btn-primary">Xoá Tài Khoản</button>
 		</form>
 	</div>

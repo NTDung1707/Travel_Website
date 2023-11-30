@@ -21,6 +21,8 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
 	integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
 	crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/ThayDoiThongTin.css">
+	<link rel="stylesheet" type="text/css" href="css/ThayDoiThongTin2.css">
 <style>
 .red {
 	color: red;
@@ -50,15 +52,19 @@ body {
 	padding: 20px;
 	border-radius: 8px;
 	margin-bottom: 100px;
+	color: white;
 }
-
+.form-check-label {
+	color: white;
+		
+}
 .form h1 {
-	color: #007bff;
+	color: white;
 }
 
 .form-label {
 	font-weight: bold;
-	color: #495057;
+	color: white;
 }
 
 .btn-primary {
@@ -165,19 +171,25 @@ body {
 							type="email" class="form-control" id="email" name="email" required="required" placeholder="Nhập Email để nhận tin nhắn xác thực"
 							value="<%=email%>">
 					</div>
-					<div class="mb-3">
-						<label for="dongYNhanMail" class="form-label">Đồng ý nhận
-							email</label> <input type="checkbox" class="form-check-input"
-							id="dongYNhanMail" name="dongYNhanMail" <%=(dongYNhanMail?"checked":"")%> >
-					</div>
+					<div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="dongYNhanMail" name="dongYNhanMail" <%=(dongYNhanMail?"checked":"")%> >
+    <label class="form-check-label" for="dongYNhanMail">Đồng ý nhận email</label>
+</div>
 					<hr />
 					
-					<input class="btn btn-primary form-control" type="submit"
+					<input class="btn btn-primary form-control js-save" type="submit"
 						value="Lưu Thông Tin" name="submit" id="submit"
 						" />
 				</div>
 			</div>
 		</form>
+		<div class="modal-save java-modal-save">
+        	<div class="container-save">
+        		<h1 class="heading-save">THÔNG BÁO</h1>
+        		<p class="des-save" style="font-weight: bold;">Bạn đã đổi thông tin thành công</p>
+        		<a class="btn-ok" href="index.jsp">OK</a>
+        	</div>
+		</div>
 	</div>
 	</div>
 	<% } %>

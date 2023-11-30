@@ -13,8 +13,10 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
 	integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
 	crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/DoiMatKhau.css">
+	
 </head>
-<body >
+<body style="background-image: url('img/Hinh-anh-thanh-pho-Da-Nang-dep-an-tuong-nhat.jpg'); background-size: cover; background-position: center; height: 100%">
 	<%
 		Object obj = session.getAttribute("khachHang");
 		KhachHang khachHang = null;
@@ -30,8 +32,8 @@
 					baoLoi = "";
 				}
 	%>
+			<h1 class="changePassword">ĐỔI MẬT KHẨU</h1>
 	<div class="container">
-		<h1>ĐỔI MẬT KHẨU</h1>
 		<span style="color: red">
 			<%=baoLoi%>
 		</span>

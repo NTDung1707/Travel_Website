@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* Reset some default styles */
+body, h1, p, label, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(40, 155, 221, 0.2);
+    margin-top: 20px;
+}
+.container h1 {
+	color: white;
+	text-align: center;
+}
+.form-label {
+	font-weight: bold;
+	color: white;
+}
+h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+/* Style the form inputs and labels */
+.form-label {
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style the submit button */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+.btn-primary:hover {
+    background-color: #c82333;
+}
