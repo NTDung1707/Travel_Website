@@ -12,12 +12,12 @@ public class KhachHang {
  private Date 	ngaysinhDate ;
  private String soDienthoaiString;
  private String email ;
- private boolean dangKyNhanBangTin ;
+ private int	 isadmin ;
  public KhachHang() {
 	}
 public KhachHang(String maKhachHangString, String tenDangNhapString, String matkhauString, String hoVaTenString,
 		String gioitinhString, String diachiString, Date ngaySinh, String soDienthoaiString, String email,
-		Boolean dongYNhanEmail) {
+		int isadmin) {
 	
 	this.maKhachHangString = maKhachHangString;
 	this.tenDangNhapString = tenDangNhapString;
@@ -28,8 +28,9 @@ public KhachHang(String maKhachHangString, String tenDangNhapString, String matk
 	this.ngaysinhDate = ngaySinh;
 	this.soDienthoaiString = soDienthoaiString;
 	this.email = email;
-	this.dangKyNhanBangTin = dongYNhanEmail;
+	this.isadmin = isadmin;
 }
+
 public String getMaKhachHangString() {
 	return maKhachHangString;
 }
@@ -84,20 +85,21 @@ public String getEmail() {
 public void setEmail(String email) {
 	this.email = email;
 }
-public boolean isDangKyNhanBangTin() {
-	return dangKyNhanBangTin;
+
+public int getIsadmin() {
+	return isadmin;
 }
-public void setDangKyNhanBangTin(boolean dangKyNhanBangTin) {
-	this.dangKyNhanBangTin = dangKyNhanBangTin;
+public void setIsadmin(int isadmin) {
+	this.isadmin = isadmin;
 }
 @Override
 public String toString() {
 	return "KhachHang [maKhachHangString=" + maKhachHangString + ", tenDangNhapString=" + tenDangNhapString
 			+ ", matkhauString=" + matkhauString + ", hoVaTenString=" + hoVaTenString + ", gioitinhString="
 			+ gioitinhString + ", diachiString=" + diachiString + ", ngaysinhDate=" + ngaysinhDate
-			+ ", soDienthoaiString=" + soDienthoaiString + ", email=" + email + ", dangKyNhanBangTin="
-			+ dangKyNhanBangTin + "]";
+			+ ", soDienthoaiString=" + soDienthoaiString + ", email=" + email + ", isadmin=" + isadmin + "]";
 }
+
 
 
 }

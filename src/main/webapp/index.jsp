@@ -55,10 +55,16 @@
 														    href="login.jsp">
 							Đăng nhập
 						</a>
-					<!--  	<a class="btn btn-primary" style="white-space: nowrap;" href="register.jsp">
-							Đăng kí
-						</a> -->
-					<%} else { %>
+					
+					<% }if(khachHang != null && khachHang.getIsadmin() == 1 ) { %>
+							<div class="navigation">
+							<a href="ChinhSuaSanPham.jsp">Chỉnh Sửa Sản Phẩm</a>
+							<a href="ChinhSuaSanPham.jsp">Quản Lý Đơn Hàng</a>
+							
+							</div>
+					
+					<% } %>
+					<% if(khachHang!=null){ %>
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-infor ">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								    <i class="fa-solid fa-user" style="color: #3294F1;"></i> <%= khachHang.getTenDangNhapString() %>

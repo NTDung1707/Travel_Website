@@ -43,14 +43,14 @@ public class Register extends HttpServlet {
 		String diaChi = request.getParameter("diaChi") ; 
 		String dienThoai = request.getParameter("dienThoai") ; 
 		String email = request.getParameter("email") ; 
-		String dongYNhanEmail = request.getParameter("dongYNhanEmail") ; 
+		String isadmin = request.getParameter("isadmin") ; 
 		request.setAttribute("tenDangNhap", tenDangNhap);		
 		request.setAttribute("hoVaTen", hoVaTen);
 		request.setAttribute("gioiTinh", gioiTinh);
 		request.setAttribute("ngaySinh", ngaySinh);
 		request.setAttribute("diaChi", diaChi);
 		request.setAttribute("dienThoai", dienThoai);
-		request.setAttribute("dongYNhanEmail", dongYNhanEmail);
+		request.setAttribute("isadmin", isadmin);
 	
 		String url = "";
 
@@ -73,7 +73,9 @@ request.setAttribute("baoLoi", baoLoi);
 		}else {
 			Random rd = new Random() ;
 			String maKhachHang = System.currentTimeMillis() + rd.nextInt(1000) +"";
-			KhachHang kh = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh,diaChi,Date.valueOf(ngaySinh), dienThoai, email, dongYNhanEmail!= null) ;
+			//int currentIsadminValue = 0;
+			//KhachHang kh = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh,diaChi,Date.valueOf(ngaySinh), dienThoai, email, Integer.parseInt(isadmin)=0 ) ;
+			KhachHang kh = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh, diaChi,Date.valueOf(ngaySinh), dienThoai, email, 0) ;
 			khachHangDAO.insert(kh);
 			url = "/thanhcong.jsp";
 			

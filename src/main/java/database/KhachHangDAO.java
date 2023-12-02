@@ -40,10 +40,10 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 				Date ngaySinh = rs.getDate("ngaysinh");
 				String soDienThoai = rs.getString("sodienthoai");
 				String email = rs.getString("email");
-				boolean dangKyNhanBangTin = rs.getBoolean("dangkinhanbangtin");
+				int isadmin = rs.getInt("isadmin");
 
 				KhachHang kh = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh, diaChi,
-						 ngaySinh, soDienThoai, email, dangKyNhanBangTin);
+						 ngaySinh, soDienThoai, email, isadmin);
 				ketQua.add(kh);
 			}
 
@@ -84,9 +84,10 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 				Date ngaySinh = rs.getDate("ngaysinh");
 				String soDienThoai = rs.getString("sodienthoai");
 				String email = rs.getString("email");
-				boolean dangKyNhanBangTin = rs.getBoolean("dangkinhanbangtin");
+				int isadmin = rs.getInt("isadmin");
 
-				ketQua = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh, diaChi,  ngaySinh, soDienThoai, email, dangKyNhanBangTin);
+
+				ketQua = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh, diaChi,  ngaySinh, soDienThoai, email, isadmin);
 			}
 
 			// Bước 5:
@@ -127,9 +128,10 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 				Date ngaySinh = rs.getDate("ngaysinh");
 				String soDienThoai = rs.getString("sodienthoai");
 				String email = rs.getString("email");
-				boolean dangKyNhanBangTin = rs.getBoolean("dangkinhanbangtin");
+				int isadmin = rs.getInt("isadmin");
 
-				ketQua = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh, diaChi,  ngaySinh, soDienThoai, email, dangKyNhanBangTin);
+
+				ketQua = new KhachHang(maKhachHang, tenDangNhap, matKhau, hoVaTen, gioiTinh, diaChi,  ngaySinh, soDienThoai, email, isadmin);
 			}
 
 			// Bước 5:
@@ -180,7 +182,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 			Connection con = JDBCUtil.getConnection();
 
 			// Bước 2: tạo ra đối tượng statement
-			String sql = "INSERT INTO khachhang (makhachhang, tendangnhap, matkhau, hoten, gioitinh, diachi, ngaysinh, sodienthoai, email, dangkinhanbangtin) "
+			String sql = "INSERT INTO khachhang (makhachhang, tendangnhap, matkhau, hoten, gioitinh, diachi, ngaysinh, sodienthoai, email, isadmin) "
                     + " VALUES (?,?,?,?,?,?,?,?,?,?)";
 
 			PreparedStatement st = con.prepareStatement(sql);
@@ -193,7 +195,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 			st.setDate(7, t.getNgaysinhDate());
 			st.setString(8, t.getSoDienthoaiString());
 			st.setString(9, t.getEmail());
-			st.setBoolean(10, t.isDangKyNhanBangTin());
+			st.setInt(10, t.getIsadmin());
 
 			// Bước 3: thực thi câu lệnh SQL
 			ketQua = st.executeUpdate();
@@ -301,7 +303,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 			// Bước 2: tạo ra đối tượng statement
 			String sql = "UPDATE khachhang " + " SET " + " tendangnhap=?" + ", matkhau=?" + ", hoten=?" + ", gioitinh=?"
 					+ ", diachi=?" + ", ngaysinh=?" + ", sodienthoai=?"
-					+ ", email=?" + ", dangkinhanbangtin=?" + " WHERE makhachhang=?";
+					+ ", email=?" + ", isadmin=?" + " WHERE makhachhang=?";
 
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, t.getTenDangNhapString());
@@ -312,7 +314,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 			st.setDate(6, t.getNgaysinhDate());
 			st.setString(7, t.getSoDienthoaiString());
 			st.setString(8, t.getEmail());
-			st.setBoolean(9, t.isDangKyNhanBangTin());
+			st.setInt(9, t.getIsadmin());
 			st.setString(10, t.getMaKhachHangString());
 			// Bước 3: thực thi câu lệnh SQL
 
@@ -339,7 +341,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 			Connection con = JDBCUtil.getConnection();
 
 			// Bước 2: tạo ra đối tượng statement
-			String sql = "UPDATE khachhang SET hoten=?, gioitinh=?, diachi=?, ngaysinh=?, sodienthoai=?, email=?, dangkinhanbangtin=? WHERE makhachhang=?";
+			String sql = "UPDATE khachhang SET hoten=?, gioitinh=?, diachi=?, ngaysinh=?, sodienthoai=?, email=?  WHERE makhachhang=?";
 
 
 			PreparedStatement st = con.prepareStatement(sql);
@@ -347,11 +349,11 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 			st.setString(1, t.getHoVaTenString());
 			st.setString(2, t.getGioitinhString());
 			st.setString(3, t.getDiachiString());
-			st.setDate(4, t.getNgaysinhDate());
+			st.setDate(4, 	t.getNgaysinhDate());
 			st.setString(5, t.getSoDienthoaiString());
 			st.setString(6, t.getEmail());
-			st.setBoolean(7, t.isDangKyNhanBangTin());
-			st.setString(8, t.getMaKhachHangString());
+			st.setString(7, t.getMaKhachHangString());
+
 			// Bước 3: thực thi câu lệnh SQL
 
 			System.out.println(sql);
@@ -433,21 +435,21 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 	public static void main(String[] args) {
 //	    // Tạo một đối tượng KhachHang
 	    KhachHang khachHang = new KhachHang();
-	    khachHang.setMaKhachHangString("123998");
-	    khachHang.setTenDangNhapString("testUser");
+	    khachHang.setMaKhachHangString("123993");
+	    khachHang.setTenDangNhapString("testUser2");
 	    khachHang.setMatkhauString("testPassword");
 	    khachHang.setHoVaTenString("Nguyen Van B");
 	    khachHang.setGioitinhString("Nam");
-    khachHang.setDiachiString("123 Test Street hoot");
+	    khachHang.setDiachiString("123 Test Street hoot");
 	    khachHang.setNgaysinhDate(new Date(System.currentTimeMillis()));
 	    khachHang.setSoDienthoaiString("123456789");
 	    khachHang.setEmail("test@example.com");
-	    khachHang.setDangKyNhanBangTin(true);
+	    khachHang.setIsadmin(1);;
 
 	    // Gọi hàm insert để chèn đối tượng vào CSDL
-	    KhachHangDAO khachHangDAO = new KhachHangDAO();
-	    int result = khachHangDAO.insert(khachHang);
-	    
+//	    KhachHangDAO khachHangDAO = new KhachHangDAO();
+//	    int result = khachHangDAO.insert(khachHang);
+//	    
 //		 KhachHang khachHang1 = new KhachHang();
 //		    khachHang1.setHoVaTenString("Nguyen Van Test");
 //		    khachHang1.setGioitinhString("Nữ");
@@ -455,7 +457,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>{
 //		    khachHang1.setNgaysinhDate(new Date(System.currentTimeMillis()));
 //		    khachHang1.setSoDienthoaiString("123456789");
 //		    khachHang1.setEmail("test123@example.com");
-//		    khachHang1.setDangKyNhanBangTin(true);
+//		   // khachHang1.setDangKyNhanBangTin(true);
 //
 //		    KhachHangDAO khachHangDAO1 = new KhachHangDAO();
 //		    int result1 = khachHangDAO1.updateInfo(khachHang1);

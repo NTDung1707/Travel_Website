@@ -114,7 +114,6 @@ body {
 
 	String email = khachHang.getEmail();
 
-	boolean dongYNhanMail= khachHang.isDangKyNhanBangTin();
 
 
 	%>
@@ -171,10 +170,7 @@ body {
 							type="email" class="form-control" id="email" name="email" required="required" placeholder="Nhập Email để nhận tin nhắn xác thực"
 							value="<%=email%>">
 					</div>
-					<div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="dongYNhanMail" name="dongYNhanMail" <%=(dongYNhanMail?"checked":"")%> >
-    <label class="form-check-label" for="dongYNhanMail">Đồng ý nhận email</label>
-</div>
+					
 					<hr />
 					
 					<input class="btn btn-primary form-control js-save" type="submit"

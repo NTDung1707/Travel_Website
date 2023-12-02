@@ -103,8 +103,7 @@ body {
 	String email = request.getAttribute("email") + "";
 	email = (email.equals("null")) ? "" : email;
 
-	String dongYNhanMail = request.getAttribute("dongYNhanMail") + "";
-	dongYNhanMail = (dongYNhanMail.equals("null")) ? "" : dongYNhanMail;
+	
 	%>
 	<div class="container">
 		<div class="text-center">
@@ -118,18 +117,6 @@ body {
 			<div class="row">
 				<div class="col-sm-6">
 					<h3>Tài khoản</h3>
-					<div class="mb-3">
-						<label for="dongYDieuKhoan" class="form-label">Đồng ý với
-							<a>điều khoản của công ty </a><span id="red">*</span>
-						</label> <input type="checkbox" class="form-check-input"
-							id="dongYDieuKhoan" name="dongYDieuKhoan" required="required"
-							onchange="xuLyChonDongY()">
-					</div>
-					<div class="mb-3">
-						<label for="dongYNhanMail" class="form-label">Đồng ý nhận thông báo
-							email</label> <input type="checkbox" class="form-check-input"
-							id="dongYNhanMail" name="dongYNhanMail">
-					</div>
 					<div class="mb-3">
 						<label for="tenDangNhap" class="form-label">Tên đăng nhập<span
 							class="red">*</span></label> <input type="text" class="form-control"
@@ -192,12 +179,13 @@ body {
 							type="email" class="form-control" id="email" name="email" required="required" placeholder="Nhập Email để nhận tin nhắn xác thực"
 							value="<%=email%>">
 					</div>
-					<hr />
-					
 					<input class="btn btn-primary form-control" type="submit"
 						value="Đăng ký" name="submit" id="submit"
-						style="visibility: hidden;" />
+						 />
+					
+					
 				</div>
+				
 			</div>
 		</form>
 	</div>
@@ -215,7 +203,7 @@ body {
 			return true;
 		}
 	}
-*/
+
 	function xuLyChonDongY() {
 		dongYDeuKhoan = document.getElementById("dongYDieuKhoan");
 		if (dongYDeuKhoan.checked == true) {
@@ -223,7 +211,7 @@ body {
 		} else {
 			document.getElementById("submit").style.visibility = "hidden";
 		}
-	}
+	}*/
 </script>
 
 </html>

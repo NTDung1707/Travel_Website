@@ -38,19 +38,16 @@ public class ThayDoiThongTin extends HttpServlet {
 		String gioiTinh = request.getParameter("gioiTinh");
 		String ngaySinh = request.getParameter("ngaySinh");
 		String diaChiKhachHang = request.getParameter("diaChiKhachHang");
-		String diaChiMuaHang = request.getParameter("diaChiMuaHang");
-		String diaChiNhanHang = request.getParameter("diaChiNhanHang");
 		String dienThoai = request.getParameter("dienThoai");
 		String email = request.getParameter("email");
-		String dongYNhanMail = request.getParameter("dongYNhanMail");
+		String isadmin = request.getParameter("isadmin") ; 
 		request.setAttribute("hoVaTen", hoVaTen);
 		request.setAttribute("gioiTinh", gioiTinh);
 		request.setAttribute("ngaySinh", ngaySinh);
 		request.setAttribute("diaChiKhachHang", diaChiKhachHang);
-		request.setAttribute("diaChiMuaHang", diaChiMuaHang);
-		request.setAttribute("diaChiNhanHang", diaChiNhanHang);
 		request.setAttribute("dienThoai", dienThoai);
-		request.setAttribute("dongYNhanMail", dongYNhanMail);
+		request.setAttribute("email", email);
+		request.setAttribute("isadmin", isadmin);
 		
 		String url = "";
 		
@@ -58,7 +55,6 @@ public class ThayDoiThongTin extends HttpServlet {
 		KhachHangDAO khachHangDAO = new KhachHangDAO();
 
 		request.setAttribute("baoLoi", baoLoi);
-		
 		
 		if(baoLoi.length()>0) {
 			url = "/dangky.jsp";
@@ -69,7 +65,8 @@ public class ThayDoiThongTin extends HttpServlet {
 				khachHang = (KhachHang)obj;		
 				if(khachHang!=null){	
 					String maKhachHang = khachHang.getMaKhachHangString();
-					KhachHang kh = new KhachHang(maKhachHang, "", "", hoVaTen, gioiTinh, diaChiKhachHang, Date.valueOf(ngaySinh), dienThoai, email, dongYNhanMail!=null);
+					int currentIsadminValue = khachHang.getIsadmin();
+					KhachHang kh = new KhachHang(maKhachHang, "", "", hoVaTen, gioiTinh, diaChiKhachHang, Date.valueOf(ngaySinh), dienThoai, email,currentIsadminValue);
 					khachHangDAO.updateInfo(kh);
 					KhachHang kh2 = khachHangDAO.selectById(kh);
 					request.getSession().setAttribute("khachHang", kh2);
